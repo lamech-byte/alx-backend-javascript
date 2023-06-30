@@ -1,5 +1,5 @@
 // Import the ClassRoom class
-import ClassRoom from "./0-classroom.js";
+import ClassRoom from "./0-classroom";
 
 // initializeRooms function
 export default function initializeRooms() {
