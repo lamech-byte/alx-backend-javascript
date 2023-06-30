@@ -6,3 +6,5 @@ export default function getResponseFromAPI() {
     }, 2000);
   });
 }
+
+export default getResponseFromAPI;
