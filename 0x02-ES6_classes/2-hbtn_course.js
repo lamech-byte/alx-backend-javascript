@@ -15,7 +15,7 @@ export default class HolbertonCourse {
   set name(newName) {
     this._name = this.validateString(newName, 'Name');
   }
-
+  
   // Getter for length
   get length() {
     return this._length;
