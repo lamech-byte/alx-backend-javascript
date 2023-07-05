@@ -1,8 +1,8 @@
 export default function iterateThroughObject(reportWithIterator) {
   let result = '';
 
-  for (const employeeName of reportWithIterator) {
-    result += employeeName + ' | ';
+  for (const departmentEmployees of reportWithIterator) {
+    result += employeeNames + ' | ';
   }
 
   // Remove the trailing ' | ' from the result
