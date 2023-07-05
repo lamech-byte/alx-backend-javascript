@@ -5,7 +5,7 @@ export default function taskBlock(trueOrFalse) {
   if (trueOrFalse) {
     // Cannot reassign new values to task and task2 here
     // Instead, you can return new values directly
-    const task = true;
+    const task = false;
     const task3 = false;
 
     return [true, false];
