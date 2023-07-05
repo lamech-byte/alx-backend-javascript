@@ -1,13 +1,12 @@
 export default function taskBlock(trueOrFalse) {
-  let task = false;
-  let task2 = true;
+  const task = false;
+  const task2 = true;
 
   if (trueOrFalse) {
-    const taskInsideBlock = true;
-    const task2InsideBlock = false;
+    // Cannot reassign new values to task and task2 here
+    // Instead, you can return new values directly
 
-    task = taskInsideBlock;
-    task2 = task2InsideBlock;
+    return [true, false];
   }
 
   return [task, task2];
