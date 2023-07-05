@@ -4,8 +4,8 @@ export default function taskBlock(trueOrFalse) {
 
   if (trueOrFalse) {
     // You can't reassign a new value to a const variable
-    // Instead, you can use a different variable name inside the conditional block
     const task = true;
+    // Instead, you can use a different variable name inside the conditional block
     const task2 = false;
   }
 
