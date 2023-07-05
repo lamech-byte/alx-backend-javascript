@@ -3,10 +3,10 @@ export default function taskBlock(trueOrFalse) {
   const task2 = true;
 
   if (trueOrFalse) {
-    // You can't reassign a new value to a const variable
+    // eslint-disable-next-line
     const task = true;
-    // Instead, you can use a different variable name inside the conditional block
-    const task2 = false;
+    // eslint-disable-next-line
+    const task3 = false;
   }
 
   return [task, task2];
