@@ -6,7 +6,7 @@ export default function taskBlock(trueOrFalse) {
     // Cannot reassign new values to task and task2 here
     // Instead, you can return new values directly
 
-    return [true, false];
+    return [task=true, task2=false];
   }
 
   return [task, task2];
