@@ -6,7 +6,7 @@ export default function iterateThroughObject(reportWithIterator) {
   }
 
   // Remove the trailing ' | ' from the result
-  result = result.slice(0, -4);
+  result = result.slice(0, -3);
 
   return result;
 }
