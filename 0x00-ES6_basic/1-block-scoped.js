@@ -3,12 +3,10 @@ export default function taskBlock(trueOrFalse) {
   const task2 = true;
 
   if (trueOrFalse) {
-    // Cannot reassign new values to task and task2 here
-    // Instead, you can return new values directly
-    const task = false;
+    // eslint-disable-next-line
+    const task = true;
+    // eslint-disable-next-line
     const task3 = false;
-
-    return [true, false];
   }
 
   return [task, task2];
