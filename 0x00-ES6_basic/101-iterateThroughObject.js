@@ -1,5 +1,5 @@
 export default function iterateThroughObject(reportWithIterator) {
-  const employeeNames = [];
+  let employeeNames = [];
 
   for (const departmentEmployees of reportWithIterator) {
     employeeNames += departmentEmployees + ' | ';
