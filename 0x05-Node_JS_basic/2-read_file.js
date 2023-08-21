@@ -2,6 +2,12 @@ const fs = require('fs');
 
 function countStudents(path) {
   try {
+    fs.readFileSync(path, 'utf-8');
+  } catch (error) {
+    throw new Error('Cannot load the database');
+  }
+
+  try {
     const data = fs.readFileSync(path, 'utf-8');
     const lines = data.trim().split('\n');
     const students = lines.slice(1).map(line => line.split(','));
