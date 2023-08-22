@@ -12,19 +12,20 @@ describe('1-stdin.js', () => {
 
     const child = spawn('node', [scriptPath]);
     let currentIndex = 0;
+    let receivedOutput = '';
 
     child.stdin.write(input);
 
     child.stdout.on('data', (data) => {
-      expect(data.toString()).toBe(expectedOutput[currentIndex]);
-      currentIndex++;
+      receivedOutput += data.toString();
 
-      if (currentIndex === expectedOutput.length) {
+      if (receivedOutput === expectedOutput.join('')) {
         child.stdin.end();
       }
     });
 
     child.on('close', (code) => {
+      expect(receivedOutput).toBe(expectedOutput.join(''));
       expect(code).toBe(0);
       done();
     });
