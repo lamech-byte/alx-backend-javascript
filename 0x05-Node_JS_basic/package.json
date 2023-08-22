@@ -6,19 +6,10 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint",
     "check-lint": "lint [0-9]*.js",
-<<<<<<< HEAD
-    "test": "./node_modules/mocha/bin/mocha --require babel-register --exit jest",
     "dev": "nodemon --exec babel-node --presets babel-preset-env ./full_server/server.js ./database.csv"
-<<<<<<< HEAD
-=======
     "full-test": "npm run test && npm run lint"
-
->>>>>>> a555392d76c192c634826ec8d66870cc95841d3c
-=======
     "test": "jest",
     "dev": "nodemon --exec babel-node --presets babel-preset-env ./full_server/server.js ./database.csv",
-    "full-test": "npm run test && npm run lint"
->>>>>>> 73daf5ca47bc8292ed87c4ece0fd3c3fe727cefd
   },
   "author": "",
   "license": "ISC",
