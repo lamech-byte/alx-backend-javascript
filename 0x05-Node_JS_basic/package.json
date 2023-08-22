@@ -14,7 +14,10 @@
   "license": "ISC",
   "dependencies": {
     "chai-http": "^4.3.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "babel-jest": "^27.3.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -27,9 +30,6 @@
     "chai": "^4.2.0",
     "mocha": "^6.2.2",
     "request": "^2.88.0",
-    "sinon": "^7.5.0",
-    "@babel/core": "^7.15.0",   // Add this line
-    "@babel/preset-env": "^7.15.0",  // Add this line
-    "babel-jest": "^27.3.1"    // Add this line
+    "sinon": "^7.5.0"
   }
 }
