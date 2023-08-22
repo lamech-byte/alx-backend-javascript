@@ -6,7 +6,6 @@ module.exports = {
   },
   extends: [
     'airbnb-base',
-    'plugin:jest/all',
   ],
   globals: {
     Atomics: 'readonly',
