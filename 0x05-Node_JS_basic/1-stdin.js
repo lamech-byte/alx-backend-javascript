@@ -2,19 +2,15 @@ const readline = require('readline');
 
 const rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout,
+  output: process.stdout
 });
 
-console.log('Welcome to Holberton School, what is your name?');
+console.log("Welcome to Holberton School, what is your name?");
 
 rl.on('line', (input) => {
-  if (input.toLowerCase() === 'exit') {
-    console.log('This important software is now closing');
+  if (input === "") {
     rl.close();
-  } else if (input === 'John') {
-    console.log('Your name is: John');
-    console.log('This important software is now closing');
-    rl.close();
+    console.log("This important software is now closing");
   } else {
     console.log(`Your name is: ${input}`);
   }
