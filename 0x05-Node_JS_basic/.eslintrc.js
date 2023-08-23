@@ -16,7 +16,11 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: ['jest'],
+  plugins: [
+    'jest',
+    '@typescript-eslint'
+  ],
+  parser: '@typescript-eslint/parser',
   rules: {
     'max-classes-per-file': 'off',
     'no-underscore-dangle': 'off',
