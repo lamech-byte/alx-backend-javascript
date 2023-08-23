@@ -14,5 +14,6 @@ rl.on('line', (input) => {
     rl.close();
   } else {
     console.log(`Your name is: ${trimmedInput}`);
+    rl.close(); // Close the interface after processing the input
   }
 });
