@@ -11,8 +11,11 @@ rl.on('line', (input) => {
   const trimmedInput = input.trim();
   if (trimmedInput === "") {
     rl.close();
-    console.log("This important software is now closing");
   } else {
     console.log(`Your name is: ${trimmedInput}`);
   }
+});
+
+rl.on('close', () => {
+  console.log("This important software is now closing");
 });
