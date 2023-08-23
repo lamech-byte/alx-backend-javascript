@@ -10,12 +10,9 @@ console.log("Welcome to Holberton School, what is your name?");
 rl.on('line', (input) => {
   const trimmedInput = input.trim();
   if (trimmedInput === "") {
+    console.log("This important software is now closing");
     rl.close();
   } else {
     console.log(`Your name is: ${trimmedInput}`);
   }
-});
-
-rl.on('close', () => {
-  console.log("This important software is now closing");
 });
