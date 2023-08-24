@@ -25,16 +25,17 @@ describe('Index page', function () {
     });
   });
 
-  it('should log "API available on localhost port 7865"', function (done) {
+  it('should log "API available on localhost port 7865"', function(done) {
     const consoleLogStub = console.log;
-    console.log = function (message) {
+    console.log = function(message) {
       expect(message).to.equal('API available on localhost port 7865');
+      console.log = consoleLogStub; // Restore the original console.log
       done();
     };
-    // Trigger the console log by making a request to the server
-    request('http://localhost:7865', function (error, response, body) {
-      // This request doesn't need any assertion, it's just to trigger the log
-    });
-    console.log = consoleLogStub; // Restore the original console.log
+    require('./api'); // Start the server to trigger the console log
+    // Delay the assertion for a brief moment
+    setTimeout(() => {
+      // Do nothing here, the assertion will be handled in the overridden console.log
+    }, 100);
   });
 });
