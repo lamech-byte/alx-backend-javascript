@@ -1,8 +1,8 @@
-/**
-Creating countStudents function
-that reads the provided database.csv file
-asynchronously and returns a Promise
-**/
+/*
+*Creating countStudents function
+*that reads the provided database.csv file
+*asynchronously and returns a Promise
+*/
 
 const fs = require('fs').promises;
 
