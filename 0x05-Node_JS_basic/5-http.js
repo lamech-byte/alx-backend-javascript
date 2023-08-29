@@ -7,7 +7,7 @@ const fs = require('fs').promises;
 
 const port = 1245;
 const host = 'localhost';
-const file = process.argv[2];
+const dataFile = process.argv[2];
 
 const countStudents = async (dataPath) => {
   try {
@@ -52,33 +52,33 @@ const countStudents = async (dataPath) => {
   }
 };
 
-const ROUTES = {
-  '/': (req, res) => {
-    const message = 'Hello Holberton School!';
+const handleHomeRequest = (res) => {
+  const message = 'Hello Holberton School!';
+  res.setHeader('Content-Type', 'text/plain');
+  res.end(message);
+};
+
+const handleStudentsRequest = async (res) => {
+  try {
+    const message = 'This is the list of our students\n';
+    const response = await countStudents(dataFile);
+    const mergedResponse = message + response.trim();
     res.setHeader('Content-Type', 'text/plain');
-    res.end(message);
-  },
-  '/students': async (req, res) => {
-    try {
-      const message = 'This is the list of our students\n';
-      const response = await countStudents(file);
-      const mergedResponse = message + response.trim();
-      res.setHeader('Content-Type', 'text/plain');
-      res.setHeader('Content-Length', Buffer.byteLength(mergedResponse));
-      res.end(mergedResponse);
-    } catch (error) {
-      const message = 'This is the list of our students\n';
-      res.setHeader('Content-Type', 'text/plain');
-      res.writeHead(500);
-      res.end(message + error.message);
-    }
-  },
+    res.setHeader('Content-Length', Buffer.byteLength(mergedResponse));
+    res.end(mergedResponse);
+  } catch (error) {
+    const message = 'This is the list of our students\n';
+    res.setHeader('Content-Type', 'text/plain');
+    res.writeHead(500);
+    res.end(message + error.message);
+  }
 };
 
 const app = http.createServer(async (req, res) => {
-  const route = ROUTES[req.url];
-  if (route) {
-    route(req, res);
+  if (req.url === '/') {
+    handleHomeRequest(res);
+  } else if (req.url === '/students') {
+    handleStudentsRequest(res);
   } else {
     res.setHeader('Content-Type', 'text/plain');
     res.writeHead(404);
