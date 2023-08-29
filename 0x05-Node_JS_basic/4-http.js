@@ -1,5 +1,5 @@
 /*
- * Create a small HTTP server using the http module.
+ * create a small HTTP server using Node.js's built-in http module
  */
 
 const http = require('http');
